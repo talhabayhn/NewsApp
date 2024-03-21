@@ -1,10 +1,16 @@
-package com.example.newsapp.api
+package com.example.newsapp.models
 
 
-import com.example.newsapp.api.Source
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(
+    tableName = "articles"
+)
 data class Article(
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null,
     @SerializedName("author")
     val author: String,
     @SerializedName("content")
